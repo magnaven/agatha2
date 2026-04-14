@@ -116,51 +116,51 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| ONBD-01 | Phase 2 | Pending |
-| ONBD-02 | Phase 2 | Pending |
-| ONBD-03 | Phase 2 | Pending |
-| ONBD-04 | Phase 2 | Pending |
-| ONBD-05 | Phase 2 | Pending |
-| ONBD-06 | Phase 2 | Pending |
-| ONBD-07 | Phase 2 | Pending |
-| TIME-01 | Phase 3 | Pending |
-| TIME-02 | Phase 3 | Pending |
-| TIME-03 | Phase 3 | Pending |
-| TIME-04 | Phase 3 | Pending |
-| TIME-05 | Phase 3 | Pending |
-| BLDM-01 | Phase 3 | Pending |
-| BLDM-02 | Phase 3 | Pending |
-| BLDM-03 | Phase 3 | Pending |
-| BLDM-04 | Phase 3 | Pending |
-| BLDR-01 | Phase 3 | Pending |
-| BLDR-02 | Phase 3 | Pending |
-| BLDR-03 | Phase 3 | Pending |
-| BLDR-04 | Phase 3 | Pending |
-| BLDR-05 | Phase 3 | Pending |
-| BLDR-06 | Phase 3 | Pending |
-| BLDR-07 | Phase 3 | Pending |
-| DISC-01 | Phase 4 | Pending |
-| DISC-02 | Phase 4 | Pending |
-| DISC-03 | Phase 4 | Pending |
-| DISC-04 | Phase 4 | Pending |
-| DISC-05 | Phase 4 | Pending |
-| NGHT-01 | Phase 4 | Pending |
-| NGHT-02 | Phase 4 | Pending |
-| EXPR-01 | Phase 4 | Pending |
-| EXPR-02 | Phase 4 | Pending |
-| EXPR-03 | Phase 4 | Pending |
-| EXPR-04 | Phase 4 | Pending |
-| EXPR-05 | Phase 4 | Pending |
-| PROF-01 | Phase 3 | Pending |
-| PROF-02 | Phase 3 | Pending |
-| PWA-01 | Phase 5 | Pending |
-| PWA-02 | Phase 5 | Pending |
-| PWA-03 | Phase 5 | Pending |
-| OSS-01 | Phase 5 | Pending |
-| OSS-02 | Phase 5 | Pending |
+| AUTH-01 | Phase 1 — Auth | Pending |
+| AUTH-02 | Phase 1 — Auth | Pending |
+| AUTH-03 | Phase 1 — Auth | Pending |
+| ONBD-01 | Phase 2 — Onboarding | Pending |
+| ONBD-02 | Phase 2 — Onboarding | Pending |
+| ONBD-03 | Phase 2 — Onboarding | Pending |
+| ONBD-04 | Phase 2 — Onboarding | Pending |
+| ONBD-05 | Phase 2 — Onboarding | Pending |
+| ONBD-06 | Phase 2 — Onboarding | Pending |
+| ONBD-07 | Phase 2 — Onboarding | Pending |
+| TIME-01 | Phase 3 — Investigation Tools | Pending |
+| TIME-02 | Phase 3 — Investigation Tools | Pending |
+| TIME-03 | Phase 3 — Investigation Tools | Pending |
+| TIME-04 | Phase 3 — Investigation Tools | Pending |
+| TIME-05 | Phase 3 — Investigation Tools | Pending |
+| BLDM-01 | Phase 3 — Investigation Tools | Pending |
+| BLDM-02 | Phase 3 — Investigation Tools | Pending |
+| BLDM-03 | Phase 3 — Investigation Tools | Pending |
+| BLDM-04 | Phase 3 — Investigation Tools | Pending |
+| BLDR-01 | Phase 3 — Investigation Tools | Pending |
+| BLDR-02 | Phase 3 — Investigation Tools | Pending |
+| BLDR-03 | Phase 3 — Investigation Tools | Pending |
+| BLDR-04 | Phase 3 — Investigation Tools | Pending |
+| BLDR-05 | Phase 3 — Investigation Tools | Pending |
+| BLDR-06 | Phase 3 — Investigation Tools | Pending |
+| BLDR-07 | Phase 3 — Investigation Tools | Pending |
+| PROF-01 | Phase 3 — Investigation Tools | Pending |
+| PROF-02 | Phase 3 — Investigation Tools | Pending |
+| DISC-01 | Phase 4 — Discovery and Community | Pending |
+| DISC-02 | Phase 4 — Discovery and Community | Pending |
+| DISC-03 | Phase 4 — Discovery and Community | Pending |
+| DISC-04 | Phase 4 — Discovery and Community | Pending |
+| DISC-05 | Phase 4 — Discovery and Community | Pending |
+| NGHT-01 | Phase 4 — Discovery and Community | Pending |
+| NGHT-02 | Phase 4 — Discovery and Community | Pending |
+| EXPR-01 | Phase 4 — Discovery and Community | Pending |
+| EXPR-02 | Phase 4 — Discovery and Community | Pending |
+| EXPR-03 | Phase 4 — Discovery and Community | Pending |
+| EXPR-04 | Phase 4 — Discovery and Community | Pending |
+| EXPR-05 | Phase 4 — Discovery and Community | Pending |
+| PWA-01 | Phase 5 — Launch Readiness | Pending |
+| PWA-02 | Phase 5 — Launch Readiness | Pending |
+| PWA-03 | Phase 5 — Launch Readiness | Pending |
+| OSS-01 | Phase 5 — Launch Readiness | Pending |
+| OSS-02 | Phase 5 — Launch Readiness | Pending |
 
 **Coverage:**
 - v1 requirements: 44 total
@@ -169,4 +169,4 @@
 
 ---
 *Requirements defined: 2026-04-14*
-*Last updated: 2026-04-14 after initial definition*
+*Last updated: 2026-04-14 — traceability confirmed during roadmap creation*
