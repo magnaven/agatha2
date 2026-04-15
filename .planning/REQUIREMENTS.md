@@ -7,9 +7,9 @@
 
 ### Authentication
 
-- [ ] **AUTH-01**: User can create an account with email and password
-- [ ] **AUTH-02**: User can log in and stay logged in across browser sessions
-- [ ] **AUTH-03**: User can log out from any page
+- [x] **AUTH-01**: User can create an account with email and password
+- [x] **AUTH-02**: User can log in and stay logged in across browser sessions
+- [x] **AUTH-03**: User can log out from any page
 
 ### Onboarding
 
@@ -116,9 +116,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 — Auth | Pending |
-| AUTH-02 | Phase 1 — Auth | Pending |
-| AUTH-03 | Phase 1 — Auth | Pending |
+| AUTH-01 | Phase 1 — Auth | Complete |
+| AUTH-02 | Phase 1 — Auth | Complete |
+| AUTH-03 | Phase 1 — Auth | Complete |
 | ONBD-01 | Phase 2 — Onboarding | Pending |
 | ONBD-02 | Phase 2 — Onboarding | Pending |
 | ONBD-03 | Phase 2 — Onboarding | Pending |

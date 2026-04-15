@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-00-PLAN.md — Playwright test scaffold (Wave 0: smoke tests for AUTH-01/02/03)
+- [x] 01-00-PLAN.md — Playwright test scaffold (Wave 0: smoke tests for AUTH-01/02/03)
 - [ ] 01-01-PLAN.md — Next.js scaffold, Agatha design system, Supabase clients + middleware
 - [ ] 01-02-PLAN.md — Login/signup page, Server Actions, protected app shell, e2e verification
 
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Auth | 0/3 | Planned | - |
+| 1. Auth | 2/3 | In Progress|  |
 | 2. Onboarding | 0/2 | Not started | - |
 | 3. Investigation Tools | 0/5 | Not started | - |
 | 4. Discovery and Community | 0/4 | Not started | - |
@@ -120,4 +120,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 ---
 *Roadmap created: 2026-04-14*
-*Last updated: 2026-04-14 — Phase 1 plans created (01-00, 01-01, 01-02)*
+*Last updated: 2026-04-15 — Phase 1 plan 01-00 completed (Playwright test scaffold)*
