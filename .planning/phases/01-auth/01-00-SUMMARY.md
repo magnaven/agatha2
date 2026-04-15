@@ -98,6 +98,15 @@ Before running tests (after plans 01 and 02 complete), fill in `.env.test.local`
 - Tests will turn GREEN after plan 01 (Next.js scaffold) and plan 02 (auth UI + Supabase wiring) complete
 - Supabase test project credentials must be added to `.env.test.local` before running tests
 
+## Self-Check: PASSED
+
+- playwright.config.ts: FOUND
+- tests/auth.spec.ts: FOUND
+- .env.test.local: FOUND
+- 01-00-SUMMARY.md: FOUND
+- Commit ebcbddb (Task 1): FOUND
+- Commit b497702 (Task 2): FOUND
+
 ---
 *Phase: 01-auth*
 *Completed: 2026-04-15*
