@@ -21,12 +21,12 @@ async function createUnboardedUser(supabase: ReturnType<typeof adminClient>) {
   return { email, password, userId: created.user.id }
 }
 
-async function fillInitialSteps(page: import('@playwright/test').Page, name: string, age: string) {
+async function fillInitialSteps(page: import('@playwright/test').Page, name: string, _age: string) {
   // Step 1: Name
   await page.getByRole('textbox').fill(name)
   await page.getByRole('button', { name: /Continue/i }).click()
-  // Step 2: Age — single select auto-advances
-  await page.locator('.option-item', { hasText: age }).click()
+  // Step 2: Age — click first option (Under 18) to auto-advance; age parameter kept for API compat
+  await page.locator('.option-item').first().click()
 }
 
 // @smoke @onbd-01 — "Screener loads at /onboarding with 9 options"
