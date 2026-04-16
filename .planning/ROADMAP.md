@@ -45,11 +45,11 @@ Plans:
   3. "No diagnosis but suspect something" can stack with diagnosed conditions; "No I haven't" is mutually exclusive
   4. Screener ends with a synthesis screen where Claude has generated an investigation title and created the first timeline entry
   5. User's profile (name, age range, conditions, investigation question) is persisted to Supabase and visible in subsequent sessions
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Branching screener UI (9 options, 5 paths, conditions multi-select, condition follow-ups)
-- [ ] 02-02: Claude synthesis screen + profile persistence to Supabase
+- [ ] 02-01-PLAN.md — Screener state machine: types, step config, Client Component (name/age/brings-you-here/conditions/follow-ups), profile guard
+- [ ] 02-02-PLAN.md — Claude synthesis Server Action + typewriter reveal + Supabase profile/investigation writes
 
 ### Phase 3: Investigation Tools
 **Goal**: Users can journal daily, log blood markers, and see personalised test recommendations — making Agatha useful every week
