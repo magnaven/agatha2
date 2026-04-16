@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-04-16T07:06:43.997Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-04-16T13:57:50.674Z"
 last_activity: 2026-04-15 — Completed plan 01-00 (Playwright test scaffold)
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
   percent: 10
 ---
 
@@ -52,6 +52,7 @@ Progress: [█░░░░░░░░░] 10%
 *Updated after each plan completion*
 | Phase 01-auth P00 | 1 | 2 tasks | 4 files |
 | Phase 01-auth P01 | 8 | 2 tasks | 14 files |
+| Phase 02-onboarding P01 | 11 | 3 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,9 @@ Recent decisions affecting current work:
 - [Phase 01-auth]: Manually scaffolded Next.js (create-next-app conflicted with existing repo files) — installed packages individually for equivalent result
 - [Phase 01-auth]: Two Supabase clients: server.ts (next/headers, async) and client.ts (browser only) — never mix to avoid next/headers crash in browser
 - [Phase 01-auth]: Middleware uses getUser() not getSession() — getUser() validates server-side and triggers token refresh; getSession() returns unvalidated cookie data
+- [Phase 02-onboarding]: Onboarding route in own (onboarding) route group to avoid (auth)/layout.tsx redirect loop
+- [Phase 02-onboarding]: Profile guard uses onboarding_complete field — Supabase trigger auto-creates profile rows on user creation
+- [Phase 02-onboarding]: buildStepQueue returns tail including conditions step — advance from conditions strips it to avoid duplicate
 
 ### Pending Todos
 
@@ -81,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-16T07:06:43.992Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-onboarding/02-CONTEXT.md
+Last session: 2026-04-16T13:57:50.672Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
