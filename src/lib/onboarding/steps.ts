@@ -76,7 +76,7 @@ export function buildStepQueue(branch: BranchPath, selectedConditions: string[])
     }
   }
 
-  queue.push('synthesis')
+  queue.push('hypothesis', 'synthesis')
   return queue
 }
 

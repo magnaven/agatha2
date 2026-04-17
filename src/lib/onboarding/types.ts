@@ -4,6 +4,7 @@ export type StepId =
   | 'branch-menopause' | 'branch-complex'
   | 'followup-endo' | 'followup-pcos' | 'followup-poi'
   | 'followup-fibroids' | 'followup-ha' | 'followup-reds' | 'followup-adeno'
+  | 'hypothesis'
   | 'synthesis'
 
 export type BranchPath = 'curious' | 'symptoms' | 'fertility' | 'menopause' | 'complex'
@@ -18,4 +19,5 @@ export interface ScreenerState {
   conditions?: string[]
   suspectedConditions?: string[]
   followups?: Record<string, string | string[] | { symptoms?: string[]; hrt?: string }>
+  hypothesis?: string
 }

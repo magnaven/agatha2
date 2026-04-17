@@ -29,7 +29,7 @@ export async function synthesiseInvestigation(state: ScreenerState): Promise<{ t
     conditions: state.conditions ?? [],
     suspected_conditions: state.suspectedConditions ?? [],
     onboarding_selections: state.bringsYouHere ?? [],
-    investigation_question: title,
+    investigation_question: state.hypothesis ?? null,
     onboarding_complete: true,
   })
 
@@ -62,13 +62,16 @@ function buildSynthesisPrompt(state: ScreenerState): string {
   const conditions = (state.conditions ?? []).join(', ') || 'none diagnosed'
   const suspected = (state.suspectedConditions ?? []).join(', ') || 'none'
   const interests = (state.bringsYouHere ?? []).join(', ')
+  const hypothesis = state.hypothesis ?? ''
   return `You are Agatha, a women's health investigation assistant. Based on this user's onboarding:
 - Name: ${state.name}
 - Conditions: ${conditions}
 - Suspected: ${suspected}
 - Areas of interest: ${interests}
+- In their own words, what they want to investigate: "${hypothesis}"
 
-Write a single investigation title (6–12 words, no punctuation) in first person that names their investigation.
+The user's own words are the most important signal. Use them as the foundation.
+Write a single investigation title (6–12 words, no punctuation) in first person that captures their investigation.
 Example: "Understanding my endometriosis and how to reduce flares"
 Respond with ONLY the title, nothing else.`
 }

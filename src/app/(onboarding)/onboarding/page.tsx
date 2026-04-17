@@ -141,6 +141,10 @@ export default function OnboardingPage() {
   const [menopauseSubStep, setMenopauseSubStep] = useState(0)
   const [menopauseSymptoms, setMenopauseSymptoms] = useState<string[]>([])
 
+  // Hypothesis step state
+  const [hypothesisInput, setHypothesisInput] = useState('')
+  const [isListening, setIsListening] = useState(false)
+
   // Synthesis step state
   const [synthesisState, setSynthesisState] = useState<'idle' | 'loading' | 'done'>('idle')
   const [investigationTitle, setInvestigationTitle] = useState<string | null>(null)
@@ -466,6 +470,80 @@ export default function OnboardingPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        )
+      }
+
+      case 'hypothesis': {
+        function startVoice() {
+          const SR = (window as typeof window & { SpeechRecognition?: typeof SpeechRecognition; webkitSpeechRecognition?: typeof SpeechRecognition }).SpeechRecognition
+            ?? (window as typeof window & { webkitSpeechRecognition?: typeof SpeechRecognition }).webkitSpeechRecognition
+          if (!SR) return
+          const recognition = new SR()
+          recognition.lang = 'en-GB'
+          recognition.continuous = false
+          recognition.interimResults = false
+          recognition.onstart = () => setIsListening(true)
+          recognition.onend = () => setIsListening(false)
+          recognition.onresult = (e: SpeechRecognitionEvent) => {
+            const transcript = e.results[0][0].transcript
+            setHypothesisInput((prev) => (prev ? `${prev} ${transcript}` : transcript))
+          }
+          recognition.start()
+        }
+
+        const canSubmit = hypothesisInput.trim().length >= 3
+
+        return (
+          <div style={{ width: '100%' }}>
+            <p className="onboard__question" style={{ marginBottom: '8px' }}>
+              What do you want to investigate?
+            </p>
+            <p className="onboard__hint" style={{ marginBottom: '24px' }}>
+              In your own words. This becomes the heart of your investigation.
+            </p>
+            <textarea
+              className="input-field input-field--dark"
+              rows={4}
+              value={hypothesisInput}
+              onChange={(e) => setHypothesisInput(e.target.value)}
+              placeholder="e.g. Why do my symptoms flare before my period, and what can I actually do about it?"
+              style={{ width: '100%', marginBottom: '12px', resize: 'vertical' }}
+            />
+            <button
+              type="button"
+              onClick={startVoice}
+              aria-label={isListening ? 'Listening…' : 'Use voice input'}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'none',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '8px',
+                color: isListening ? '#d4f547' : 'rgba(255,255,255,0.5)',
+                cursor: 'pointer',
+                fontSize: '14px',
+                padding: '8px 12px',
+                marginBottom: '20px',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3zm-1 19.93V23h2v-2.07A8.001 8.001 0 0 0 20 13h-2a6 6 0 0 1-12 0H4a8.001 8.001 0 0 0 7 7.93z"/>
+              </svg>
+              {isListening ? 'Listening…' : 'Use your voice'}
+            </button>
+            {canSubmit && (
+              <button
+                className="btn btn--primary btn--full"
+                onClick={() => {
+                  advance({ hypothesis: hypothesisInput.trim() })
+                  setHypothesisInput('')
+                }}
+              >
+                Continue
+              </button>
+            )}
           </div>
         )
       }
