@@ -13,13 +13,13 @@
 
 ### Onboarding
 
-- [ ] **ONBD-01**: User is presented with a branching screener starting with "So, what brings you here?" (9 multi-select options)
-- [ ] **ONBD-02**: Screener branches into 5 paths: curious, symptoms, fertility, menopause, complex (fertility + menopause)
-- [ ] **ONBD-03**: Fertility and symptoms branches show a conditions multi-select (Adenomyosis, Endometriosis, PCOS, POI, Fibroids, and more)
-- [ ] **ONBD-04**: Selecting certain conditions triggers condition-specific follow-up questions (Endo stage, PCOS diagnostic criteria, POI age, Fibroid location, HA period status, RED-S specialist, Adenomyosis diagnosis method)
-- [ ] **ONBD-05**: "No diagnosis but suspect something" can combine with diagnosed conditions; "No I haven't" is exclusive
-- [ ] **ONBD-06**: Screener ends with a synthesis screen: Claude auto-generates an investigation title and creates the first timeline entry
-- [ ] **ONBD-07**: User profile (name, age range, conditions, suspected conditions, investigation question) saved to Supabase
+- [x] **ONBD-01**: User is presented with a branching screener starting with "So, what brings you here?" (9 multi-select options)
+- [x] **ONBD-02**: Screener branches into 5 paths: curious, symptoms, fertility, menopause, complex (fertility + menopause)
+- [x] **ONBD-03**: Fertility and symptoms branches show a conditions multi-select (Adenomyosis, Endometriosis, PCOS, POI, Fibroids, and more)
+- [x] **ONBD-04**: Selecting certain conditions triggers condition-specific follow-up questions (Endo stage, PCOS diagnostic criteria, POI age, Fibroid location, HA period status, RED-S specialist, Adenomyosis diagnosis method)
+- [x] **ONBD-05**: "No diagnosis but suspect something" can combine with diagnosed conditions; "No I haven't" is exclusive
+- [x] **ONBD-06**: Screener ends with a synthesis screen: Claude auto-generates an investigation title and creates the first timeline entry
+- [x] **ONBD-07**: User profile (name, age range, conditions, suspected conditions, investigation question) saved to Supabase
 
 ### Timeline & Journal
 
@@ -119,13 +119,13 @@
 | AUTH-01 | Phase 1 — Auth | Complete |
 | AUTH-02 | Phase 1 — Auth | Complete |
 | AUTH-03 | Phase 1 — Auth | Complete |
-| ONBD-01 | Phase 2 — Onboarding | Pending |
-| ONBD-02 | Phase 2 — Onboarding | Pending |
-| ONBD-03 | Phase 2 — Onboarding | Pending |
-| ONBD-04 | Phase 2 — Onboarding | Pending |
-| ONBD-05 | Phase 2 — Onboarding | Pending |
-| ONBD-06 | Phase 2 — Onboarding | Pending |
-| ONBD-07 | Phase 2 — Onboarding | Pending |
+| ONBD-01 | Phase 2 — Onboarding | Complete |
+| ONBD-02 | Phase 2 — Onboarding | Complete |
+| ONBD-03 | Phase 2 — Onboarding | Complete |
+| ONBD-04 | Phase 2 — Onboarding | Complete |
+| ONBD-05 | Phase 2 — Onboarding | Complete |
+| ONBD-06 | Phase 2 — Onboarding | Complete |
+| ONBD-07 | Phase 2 — Onboarding | Complete |
 | TIME-01 | Phase 3 — Investigation Tools | Pending |
 | TIME-02 | Phase 3 — Investigation Tools | Pending |
 | TIME-03 | Phase 3 — Investigation Tools | Pending |

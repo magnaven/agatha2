@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-04-16T13:57:50.674Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-04-17T06:35:05.350Z"
 last_activity: 2026-04-15 — Completed plan 01-00 (Playwright test scaffold)
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
   percent: 10
 ---
 
@@ -53,6 +53,7 @@ Progress: [█░░░░░░░░░] 10%
 | Phase 01-auth P00 | 1 | 2 tasks | 4 files |
 | Phase 01-auth P01 | 8 | 2 tasks | 14 files |
 | Phase 02-onboarding P01 | 11 | 3 tasks | 9 files |
+| Phase 02-onboarding P02 | 65 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - [Phase 02-onboarding]: Onboarding route in own (onboarding) route group to avoid (auth)/layout.tsx redirect loop
 - [Phase 02-onboarding]: Profile guard uses onboarding_complete field — Supabase trigger auto-creates profile rows on user creation
 - [Phase 02-onboarding]: buildStepQueue returns tail including conditions step — advance from conditions strips it to avoid duplicate
+- [Phase 02-onboarding]: onboarding_complete=true set in profiles upsert — without it profile guard always redirects back to /onboarding
+- [Phase 02-onboarding]: window.location.href=/ over router.push to force full reload so profile guard re-runs after synthesis
+- [Phase 02-onboarding]: Hypothesis step added before synthesis — user's own words feed Claude prompt as primary signal for investigation title
 
 ### Pending Todos
 
@@ -85,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-16T13:57:50.672Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-04-17T06:35:05.347Z
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None

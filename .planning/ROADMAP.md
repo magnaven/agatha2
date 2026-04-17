@@ -13,7 +13,7 @@ Agatha ships in five phases that follow the user's natural journey into the prod
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Auth** - Users can create accounts and log in securely
-- [ ] **Phase 2: Onboarding** - Users complete a branching health screener and land in their first investigation
+- [x] **Phase 2: Onboarding** - Users complete a branching health screener and land in their first investigation (completed 2026-04-17)
 - [ ] **Phase 3: Investigation Tools** - Users can journal, track blood markers, and get personalised test recommendations
 - [ ] **Phase 4: Discovery and Community** - Users can find research, browse trials, and run shared experiments
 - [ ] **Phase 5: Launch Readiness** - App is installable, secure, and open source
@@ -113,7 +113,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Auth | 2/3 | In Progress|  |
-| 2. Onboarding | 0/2 | Not started | - |
+| 2. Onboarding | 2/2 | Complete   | 2026-04-17 |
 | 3. Investigation Tools | 0/5 | Not started | - |
 | 4. Discovery and Community | 0/4 | Not started | - |
 | 5. Launch Readiness | 0/3 | Not started | - |
