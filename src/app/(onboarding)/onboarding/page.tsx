@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { ScreenerState, StepId, AgeRange } from '@/lib/onboarding/types'
 import {
   detectBranch,
@@ -9,6 +9,23 @@ import {
   BRINGS_YOU_HERE_OPTIONS,
   CONDITIONS_LIST,
 } from '@/lib/onboarding/steps'
+import { synthesiseInvestigation } from '@/lib/onboarding/actions'
+
+function useTypewriter(text: string | null, delay = 40) {
+  const [displayed, setDisplayed] = useState('')
+  useEffect(() => {
+    if (!text) return
+    setDisplayed('')
+    let i = 0
+    const id = setInterval(() => {
+      setDisplayed(text.slice(0, i + 1))
+      i++
+      if (i >= text.length) clearInterval(id)
+    }, delay)
+    return () => clearInterval(id)
+  }, [text, delay])
+  return displayed
+}
 
 const AGE_OPTIONS: { id: AgeRange; label: string }[] = [
   { id: 'under-18', label: 'Under 18' },
@@ -124,7 +141,28 @@ export default function OnboardingPage() {
   const [menopauseSubStep, setMenopauseSubStep] = useState(0)
   const [menopauseSymptoms, setMenopauseSymptoms] = useState<string[]>([])
 
+  // Synthesis step state
+  const [synthesisState, setSynthesisState] = useState<'idle' | 'loading' | 'done'>('idle')
+  const [investigationTitle, setInvestigationTitle] = useState<string | null>(null)
+  const displayedTitle = useTypewriter(investigationTitle, 40)
+
   const currentStep = stepQueue[idx]
+
+  // Trigger synthesis when synthesis step is reached
+  useEffect(() => {
+    if (stepQueue[idx] !== 'synthesis' || synthesisState !== 'idle') return
+    setSynthesisState('loading')
+    synthesiseInvestigation(answers)
+      .then(({ title }) => {
+        setInvestigationTitle(title)
+        setSynthesisState('done')
+      })
+      .catch(() => {
+        // On error show a fallback title — don't block the user
+        setInvestigationTitle('My health investigation')
+        setSynthesisState('done')
+      })
+  }, [idx, stepQueue, synthesisState, answers])
 
   function advance(partial: Partial<ScreenerState>) {
     const merged = { ...answers, ...partial }
@@ -464,15 +502,47 @@ export default function OnboardingPage() {
 
         // synthesis step
         if (currentStep === 'synthesis') {
+          const synthesisStyle = (
+            <style>{`
+              .loading-dots {
+                animation: blink 1.2s step-start infinite;
+              }
+              @keyframes blink {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+              }
+            `}</style>
+          )
+
+          if (synthesisState === 'loading' || synthesisState === 'idle') {
+            return (
+              <div style={{ width: '100%', textAlign: 'center' }}>
+                {synthesisStyle}
+                <p className="onboard__question" aria-live="polite">
+                  Agatha is thinking
+                  <span className="loading-dots" aria-hidden="true">...</span>
+                </p>
+              </div>
+            )
+          }
+
+          // synthesisState === 'done'
           return (
             <div style={{ width: '100%', textAlign: 'center' }}>
-              <p className="onboard__question" style={{ marginBottom: '16px' }}>
-                Agatha is thinking
-                <SynthesisEllipsis />
+              {synthesisStyle}
+              <p className="onboard__hint" style={{ marginBottom: '8px' }}>Your investigation</p>
+              <h1 className="onboard__question" style={{ marginBottom: '24px' }}>{displayedTitle}</h1>
+              <p className="onboard__hint" style={{ marginBottom: '32px' }}>
+                Your investigation has been created. Everything you log, track, and discover will live here.
               </p>
-              <p className="onboard__hint">
-                {"We're building your investigation. Just a moment."}
-              </p>
+              {displayedTitle.length === investigationTitle?.length && (
+                <button
+                  className="btn btn--primary btn--full"
+                  onClick={() => { window.location.href = '/' }}
+                >
+                  Begin my investigation
+                </button>
+              )}
             </div>
           )
         }
