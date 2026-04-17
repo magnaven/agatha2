@@ -1,7 +1,14 @@
 import { defineConfig, devices } from '@playwright/test'
+import { existsSync } from 'fs'
+
+// Load env files: .env.test.local overrides .env.local
+for (const f of ['.env.local', '.env.test.local']) {
+  if (existsSync(f)) process.loadEnvFile(f)
+}
 
 export default defineConfig({
   testDir: './tests',
+  globalSetup: './tests/global-setup.ts',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

@@ -15,12 +15,15 @@ export async function login(formData: FormData) {
 
 export async function signup(formData: FormData) {
   const supabase = await createClient()
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email: String(formData.get('email') ?? ''),
     password: String(formData.get('password') ?? ''),
   })
   if (error) redirect(`/login?error=${encodeURIComponent(error.message)}`)
-  // Email confirmation is disabled in Supabase dashboard for v1 — redirect straight to app
+  // If no session, Supabase requires email confirmation before the user is active
+  if (!data.session) {
+    redirect('/login?message=Check+your+email+to+confirm+your+account')
+  }
   redirect('/')
 }
 
