@@ -21,6 +21,7 @@ export async function synthesiseInvestigation(state: ScreenerState): Promise<{ t
   const title = (message.content[0] as { type: 'text'; text: string }).text.trim()
 
   // 2. Upsert profile (idempotent — safe to retry)
+  // Set onboarding_complete=true so the profile guard allows the user into the app after synthesis
   await supabase.from('profiles').upsert({
     id: user.id,
     name: state.name,
@@ -29,6 +30,7 @@ export async function synthesiseInvestigation(state: ScreenerState): Promise<{ t
     suspected_conditions: state.suspectedConditions ?? [],
     onboarding_selections: state.bringsYouHere ?? [],
     investigation_question: title,
+    onboarding_complete: true,
   })
 
   // 3. Insert investigation

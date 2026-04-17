@@ -102,7 +102,7 @@ describe('synthesiseInvestigation', () => {
     ).rejects.toThrow('Not authenticated')
   })
 
-  it('calls profiles upsert with correct fields (name and conditions)', async () => {
+  it('calls profiles upsert with correct fields (name, conditions, and onboarding_complete)', async () => {
     await synthesiseInvestigation({
       name: 'Alice',
       ageRange: '30-39',
@@ -115,6 +115,7 @@ describe('synthesiseInvestigation', () => {
         id: 'user-123',
         name: 'Alice',
         conditions: ['endometriosis', 'pcos'],
+        onboarding_complete: true,
       })
     )
   })
